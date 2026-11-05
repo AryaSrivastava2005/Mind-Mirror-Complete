@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="<%= csrf %>">
+  <title>Login</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/darkmode.js" defer></script>
+  <script src="/js/chatbot.js" defer></script>
+  <script src="/js/sidebar.js" defer></script>
+</head>
+<body class="with-sidebar">
+  <%- include('partials/sidebar') %>
+  <div class="main-with-sidebar">
+    <nav class="navbar glass-navbar utility-navbar">
+      <button type="button" id="menuToggle" aria-expanded="false" aria-controls="sideMenu" class="menu-toggle" aria-label="Open menu">☰</button>
+      <div class="brand"><a href="/">Mind Mirror</a></div>
+      <div class="nav-links">
+        <button type="button" id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
+        <a href="/register">Create Account</a>
+      </div>
+    </nav>
+
+    <main class="form-page">
+      <form class="auth-form" action="/login" method="POST">
+<input type="hidden" name="_csrf" value="<%= csrf %>">
+        <h1>Login</h1>
+        <p>Login with your username to see your dashboard and saved results.</p>
+
+        <% if (message) { %>
+          <div class="message"><%= message %></div>
+        <% } %>
+
+        <label>Username</label>
+        <input type="text" name="username" placeholder="Enter your username" required>
+
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter your password" required>
+
+        <button type="submit">Login</button>
+        <p class="small-text">No account yet? <a href="/register">Create one</a></p>
+      </form>
+    </main>
+  </div>
+  <%- include('partials/chatbot') %>
+</body>
+</html>

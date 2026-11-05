@@ -1,0 +1,11 @@
+<div class="chatbot-widget" id="chatbotWidget">
+<button type="button" class="chatbot-fab" id="chatbotFab" aria-label="Open Mind Mirror chat" aria-expanded="false" aria-controls="chatbotPanel">💬</button>
+<section class="chatbot-panel" id="chatbotPanel" aria-label="Mind Mirror AI chat" hidden>
+<div class="chatbot-header"><div><strong>Mind Mirror AI</strong><span id="chatbotMode">Your reflection assistant</span></div><button type="button" id="chatbotClose" aria-label="Close chat">×</button></div>
+<div class="chatbot-toolbar"><button type="button" id="chatbotReset">New chat</button><span>AI, not a human counsellor</span></div>
+<div class="chatbot-messages" id="chatbotMessages" role="log" aria-live="polite" aria-label="Conversation"></div>
+<p id="chatbotStatus" class="chatbot-note" role="status"></p>
+<div class="quick-prompts"><button type="button" data-prompt="I have a lot on my mind. Help me work out one small next step.">Talk it through</button><button type="button" data-prompt="Explain what my test results can and cannot tell me.">Understand results</button><button type="button" data-prompt="Help me reflect on why a song feels meaningful to me.">Music & feelings</button></div>
+<form class="chatbot-input-row" id="chatbotForm"><label for="chatbotInput" class="test-question-legend">Your message</label><textarea id="chatbotInput" rows="2" maxlength="2000" placeholder="What’s on your mind?" required></textarea><button type="submit" id="chatbotSend">Send</button></form>
+<p class="chatbot-note">In AI mode, sending shares your message and recent chat with OpenAI. Saved tests and account details are not included. Chat expires after 30 minutes of inactivity. Avoid sharing identifying or sensitive details. For immediate danger, contact local emergency help.</p>
+</section></div>

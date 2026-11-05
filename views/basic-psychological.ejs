@@ -1,0 +1,8 @@
+<%- include('partials/assessment-head', {title: 'Basic Psychological Test'}) %>
+<section class="card"><a href="/sample-tests">Sample Tests</a><h1>Basic Psychological Test</h1><p>Choose Agree or Disagree for each statement based on how you see yourself now. There are no right or wrong answers. If your experience varies, choose the closer answer.</p><p>This informal reflection cannot determine your exact state of mind or mental health. Results describe your answers, not a diagnosis or a fixed personality label. Your completed result is automatically saved to your account and shown on your dashboard.</p></section>
+<% if (error) { %><p role="alert"><%= error %></p><% } %>
+<form method="POST" action="/sample-tests/basic-psychological">
+<input type="hidden" name="_csrf" value="<%= csrf %>">
+<% questions.forEach((q, i) => { %>
+<%- include('partials/test-question', {q,number:i+1,total:15,choices:[['agree','Agree'],['disagree','Disagree']],answers}) %><% }) %>
+<button type="submit">See My Reflection</button></form></main></div></body></html>

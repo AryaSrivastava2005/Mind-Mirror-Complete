@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="<%= csrf %>">
+  <title>Mind Mirror</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/darkmode.js" defer></script>
+  <script src="/js/chatbot.js" defer></script>
+  <script src="/js/sidebar.js" defer></script>
+</head>
+<body class="with-sidebar">
+  <%- include('partials/sidebar') %>
+
+  <div class="main-with-sidebar">
+    <nav class="navbar glass-navbar utility-navbar">
+      <button type="button" id="menuToggle" aria-expanded="false" aria-controls="sideMenu" class="menu-toggle" aria-label="Open menu">☰</button>
+      <div class="brand"><a href="/">Mind Mirror</a></div>
+      <div class="nav-links">
+        <button type="button" id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
+        <% if (currentUser) { %>
+          <a href="/dashboard">Dashboard</a>
+          <form action="/logout" method="POST" class="logout-form"><input type="hidden" name="_csrf" value="<%= csrf %>"><button type="submit">Logout</button></form>
+        <% } else { %>
+          <a href="/login">Login</a>
+          <a class="nav-button" href="/register">Create Account</a>
+        <% } %>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Mind Mirror: Mental Wellbeing & Self-Reflection</h1>
+        <p>A sharp, interactive platform that helps users reflect on personal strengths, view visual insights, save results, and receive friendly guidance.</p>
+        <% if (currentUser) { %>
+          <a class="button" href="/dashboard">Go to Dashboard</a>
+        <% } else { %>
+          <a class="button" href="/register">Start Now</a>
+        <% } %>
+      </div>
+    </section>
+
+    <section class="cards">
+<div class="card"><h3>Mental Health & Stress</h3><p>Reflect on your recent experiences with questions and everyday situations.</p><a class="button" href="/assessments">Explore assessments</a></div>
+      <div class="card">
+        <h3>1. Register</h3>
+        <p>Create a secure profile with name, username, email, and password.</p>
+      </div>
+      <div class="card">
+        <h3>2. Explore Your Wellbeing</h3>
+        <p>Explore mental wellbeing and stress with two 60-item self-reflection assessments.</p>
+      </div>
+      <div class="card">
+        <h3>3. Get Results</h3>
+        <p>Transparent scoring summarizes your self-reported strengths.</p>
+      </div>
+      <div class="card">
+        <h3>4. Save Results</h3>
+        <p>Previous reports stay available inside the dashboard.</p>
+      </div>
+    </section>
+  </div>
+
+  <%- include('partials/chatbot') %>
+</body>
+</html>

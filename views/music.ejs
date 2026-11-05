@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="csrf-token" content="<%= csrf %>"><title>Music & Mood | Mind Mirror</title>
+<link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/music.css">
+<script src="/js/darkmode.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/chatbot.js" defer></script>
+</head><body class="with-sidebar">
+<%- include('partials/sidebar') %>
+<div class="main-with-sidebar"><nav class="navbar utility-navbar">
+<button type="button" id="menuToggle" class="menu-toggle" aria-expanded="false" aria-controls="sideMenu" aria-label="Open menu">☰</button>
+<div class="brand"><a href="/">Mind Mirror</a></div><div class="nav-links"><a href="/dashboard">Dashboard</a><button id="themeToggle" type="button">Dark Mode</button></div></nav>
+<main class="container music-page">
+<section class="info-hero-card"><p class="result-label">A moment to listen to yourself</p><h1>Music & Mood</h1>
+<p>What have you been listening to? Find a song online, discover its listed genre, and reflect on what draws you to it.</p>
+<p><strong>A song’s mood and your mood may differ.</strong> This check-in does not determine your mental health.</p></section>
+<% if (message || error) { %><p class="message" role="status"><%= error || message %></p><% } %>
+<section class="card"><h2>1. Search for a song online</h2>
+<p>Enter a title and, if you know it, the artist. Choose the correct recording from the results.</p>
+<form action="/music/analyse" method="POST" class="music-form"><input type="hidden" name="_csrf" value="<%= csrf %>">
+<label for="song">Song name</label><input id="song" name="song" value="<%= song %>" maxlength="160" required placeholder="For example, Tum Hi Ho">
+<label for="artist">Artist (optional)</label><input id="artist" name="artist" value="<%= artist %>" maxlength="160" placeholder="For example, Arijit Singh">
+<label for="country">Search region</label><select name="country" id="country"><% [['IN','India'],['US','United States'],['GB','United Kingdom']].forEach(([code,label]) => { %><option value="<%= code %>" <%= country === code ? 'selected' : '' %>><%= label %></option><% }) %></select>
+<p class="music-note">Search sends the song, optional artist and region to Apple’s iTunes search service. Your account details, questionnaire answers and reported mood are not sent. Internet access is required.</p>
+<button type="submit">Search online</button></form></section>
+<% if (matches !== null) { %><section class="card"><h2>2. Choose your recording</h2>
+<% if (!matches.length) { %><p>No recordings found. Try adding the artist, changing the spelling or choosing another region. We have not guessed a genre.</p><% } %>
+<% matches.forEach(t => { %><article class="music-match"><h3><%= t.title %></h3><p><%= t.artist %> · <%= t.album %></p><p>Genre: <strong><%= t.genre || 'Not supplied by source' %></strong></p>
+<% if(t.sourceUrl) { %><a href="<%= t.sourceUrl %>" target="_blank" rel="noopener noreferrer">View recording on Apple Music / iTunes</a><% } %>
+<form action="/music/select" method="POST"><input type="hidden" name="_csrf" value="<%= csrf %>"><input type="hidden" name="searchId" value="<%= searchId %>"><input type="hidden" name="trackId" value="<%= t.id %>"><label for="type-<%= t.id %>">How does this track sound to you? (optional)</label><select id="type-<%= t.id %>" name="trackType"><% Object.entries(musicTypes).forEach(([value,label])=>{ %><option value="<%= value %>"><%= label %></option><% }) %></select><button type="submit">Choose this recording</button></form></article><% }) %></section><% } %>
+<% if (selected) { %><section class="card music-result"><h2>3. Your song and a mood reflection</h2>
+<h3><%= selected.title %> — <%= selected.artist %></h3><p>Genre from <%= selected.provider %>: <strong><%= selected.genre || 'Not available' %></strong></p>
+<% if(selected.sourceUrl) { %><a href="<%= selected.sourceUrl %>" target="_blank" rel="noopener noreferrer">Check the source recording</a><% } %>
+<h3>What might draw you to this music?</h3><p><%= reflection %></p>
+<% if(insights){ %><div class="music-insight-grid">
+<article class="music-insight-card"><h3>Possible emotional themes</h3><h4><%= insights.title %></h4><p><%= insights.themes %></p></article>
+<article class="music-insight-card"><h3>Why you might choose this genre</h3><p><%= insights.reasons %></p></article>
+<article class="music-insight-card"><h3><%= insights.typeTitle %></h3><p><%= insights.typeReflection %></p><p class="music-note">Track type: your description, not audio analysis.</p></article>
+<article class="music-insight-card"><h3>A question for you</h3><p><%= insights.prompt %></p><h4>Try this while listening</h4><p><%= insights.tip %></p></article>
+</div><% } %>
+<p class="music-note">This is a general, rule-based reflection prompt, not a finding about you. Genre does not establish your current emotion, personality or mental health. Lyrics and audio have not been analysed.</p>
+<form action="/music/save" method="POST" class="music-form"><input type="hidden" name="_csrf" value="<%= csrf %>"><input type="hidden" name="searchId" value="<%= searchId %>"><input type="hidden" name="trackId" value="<%= selected.id %>"><input type="hidden" name="trackType" value="<%= insights ? insights.type : 'unspecified' %>">
+<label for="mood">How do you actually feel right now?</label><select id="mood" name="mood" required><option value="">Choose your feeling</option><% moods.forEach(m => { %><option><%= m %></option><% }) %></select>
+<label class="music-choice"><input type="checkbox" name="consent" value="yes" required> Save this song, its genre and my reported feeling to my account.</label>
+<p class="music-note">Search results are held temporarily. An account history entry is created only when you save. Saved entries can be deleted below.</p><button type="submit">Save my check-in</button></form></section><% } %>
+<section class="card"><h2>Your music check-ins</h2><p>The latest 30 entries. These are your reported feelings, not predictions or diagnoses.</p>
+<% if (!history.length) { %><p>No saved check-ins yet.</p><% } %>
+<div class="music-history"><% history.forEach(e => { %><article>
+<h3><%= e.song %><%= e.artist ? ' — ' + e.artist : '' %></h3>
+<% if (e.provider) { %><p>Genre: <strong><%= e.genre || 'Not available' %></strong> · <%= e.provider %></p><p><%= e.reflection %></p><% } else { %><p>Earlier check-in — song tone: <strong><%= e.songTone %></strong> (<%= e.toneSource %>)</p><% } %><% if(e.insights){ %><p><strong>Your track description:</strong> <%= e.insights.typeLabel %></p><p><%= e.insights.typeReflection %></p><% } %><p>You reported feeling: <strong><%= e.reportedMood %></strong></p>
+<time datetime="<%= e.createdAt %>"><%= new Date(e.createdAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }) %> IST</time>
+<form action="/music/<%= e.id %>/delete" method="POST"><input type="hidden" name="_csrf" value="<%= csrf %>"><button type="submit" class="small-button" aria-label="Delete check-in for <%= e.song %>">Delete check-in</button></form></article><% }) %></div></section>
+</main></div><%- include('partials/chatbot') %></body></html>

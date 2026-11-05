@@ -1,0 +1,7 @@
+<%- include('partials/assessment-head', {title: 'Leadership, Stress & Teamwork Test'}) %>
+<section class="card"><h1>Leadership, Stress &amp; Teamwork Test</h1><p>Choose Agree or Disagree for each statement based on your current experience. There are no right or wrong answers; if your experience varies, choose the closer answer.</p><p>This informal sample test describes your responses, not a validated ability assessment or a mental health diagnosis. Your completed result is automatically saved to your account and shown on your dashboard.</p></section>
+<% if (error) { %><p role="alert"><%= error %></p><% } %>
+<form method="POST" action="/sample-tests/leadership-teamwork"><input type="hidden" name="_csrf" value="<%= csrf %>">
+<% sections.forEach((section, si) => { %><section class="test-section"><h2>Set <%= si + 1 %>: <%= section.title %></h2>
+<% section.questions.forEach((q, i) => { %><%- include('partials/test-question', {q,number:si*5+i+1,total:15,choices:[['agree','Agree'],['disagree','Disagree']],answers}) %><% }) %></section><% }) %>
+<button type="submit">See My Reflection</button></form></main></div></body></html>

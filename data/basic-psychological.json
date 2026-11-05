@@ -1,0 +1,107 @@
+[
+  {
+    "id": "b1",
+    "text": "I often overthink even small decisions.",
+    "agree": "You report revisiting even small decisions.",
+    "disagree": "You do not identify with frequent overthinking of small decisions.",
+    "tip": "For a small decision, list two workable options and choose a reasonable stopping point."
+  },
+  {
+    "id": "b2",
+    "text": "I feel more energized when I’m around people than when I’m alone.",
+    "agree": "You describe social time as more energizing than time alone.",
+    "disagree": "Social time may not feel more energizing than time alone for you.",
+    "tip": "Notice which kinds of company and quiet time leave you feeling restored."
+  },
+  {
+    "id": "b3",
+    "text": "I prefer to finish one task completely before starting another.",
+    "agree": "You prefer completing one task before switching.",
+    "disagree": "You do not have a strong preference for finishing one task before starting another.",
+    "tip": "Try a short focused work period and notice whether switching tasks helps or interrupts you."
+  },
+  {
+    "id": "b4",
+    "text": "Criticism affects me more than I show to others.",
+    "agree": "You report that criticism has an impact you do not fully show.",
+    "disagree": "You do not identify with hiding the impact of criticism.",
+    "tip": "Separate the useful part of feedback from its delivery; ask for a concrete example when needed."
+  },
+  {
+    "id": "b5",
+    "text": "I trust my gut feeling more than logic when making important choices.",
+    "agree": "You describe a preference for intuition in important choices.",
+    "disagree": "You do not describe intuition as more trusted than logic.",
+    "tip": "For an important choice, compare your first impression with the available facts."
+  },
+  {
+    "id": "b6",
+    "text": "I find it hard to say \"no\" even when I’m busy.",
+    "agree": "You report difficulty declining requests when busy.",
+    "disagree": "You do not identify with difficulty declining requests when busy.",
+    "tip": "Before accepting a request, check your time and consider a realistic alternative."
+  },
+  {
+    "id": "b7",
+    "text": "I learn better from my mistakes than from my successes.",
+    "agree": "You see mistakes as especially useful learning experiences.",
+    "disagree": "You do not see mistakes as better teachers than successes.",
+    "tip": "Look at one success and one mistake: what can each teach you about your next attempt?"
+  },
+  {
+    "id": "b8",
+    "text": "I need a plan for almost everything to feel calm.",
+    "agree": "You describe planning as important to feeling calm.",
+    "disagree": "You do not describe needing a plan for almost everything to feel calm.",
+    "tip": "Try a short plan that leaves room for one unexpected change."
+  },
+  {
+    "id": "b9",
+    "text": "I care a lot about what people think of me.",
+    "agree": "You report that other people’s opinions matter a lot to you.",
+    "disagree": "You do not identify strongly with caring about other people’s opinions.",
+    "tip": "Ask whose feedback is relevant to this situation and which values matter to you."
+  },
+  {
+    "id": "b10",
+    "text": "I would rather be respected than be popular.",
+    "agree": "You choose respect over popularity in this comparison.",
+    "disagree": "You do not choose respect over popularity in this comparison; that does not mean respect is unimportant.",
+    "tip": "Describe what respectful treatment looks like to you in a real relationship."
+  },
+  {
+    "id": "b11",
+    "text": "I get motivated more by challenges than by rewards.",
+    "agree": "You describe challenges as more motivating than rewards.",
+    "disagree": "You do not describe challenges as more motivating than rewards.",
+    "tip": "Experiment with a manageable challenge and a small reward to see what helps you start."
+  },
+  {
+    "id": "b12",
+    "text": "I keep my emotions to myself instead of sharing them.",
+    "agree": "You describe tending to keep emotions private.",
+    "disagree": "You do not identify with generally keeping emotions to yourself.",
+    "tip": "Consider when privacy serves you and when sharing with someone you trust might be useful."
+  },
+  {
+    "id": "b13",
+    "text": "I believe failure is the best way to grow.",
+    "agree": "You view failure as a particularly important route to growth.",
+    "disagree": "You do not view failure as the best route to growth.",
+    "tip": "Name one lesson you can learn from practice, feedback or a successful experience too."
+  },
+  {
+    "id": "b14",
+    "text": "I feel uncomfortable in a group if I don’t know what to do.",
+    "agree": "You report discomfort in groups when your role is unclear.",
+    "disagree": "You do not identify with discomfort in groups specifically because your role is unclear.",
+    "tip": "If a group task is unclear, ask what is expected or offer one small contribution."
+  },
+  {
+    "id": "b15",
+    "text": "I would choose honesty over kindness if I had to pick one.",
+    "agree": "You choose honesty when the statement asks you to prioritize one value.",
+    "disagree": "You do not choose honesty over kindness in this comparison; that does not imply dishonesty.",
+    "tip": "Think of wording that is both truthful and considerate; real situations often allow both."
+  }
+]

@@ -1,0 +1,50 @@
+<aside class="side-menu" id="sideMenu">
+  <div class="side-menu-top">
+    <a href="/" class="side-brand">Mind Mirror</a>
+    <p class="side-tagline">Reflect. Understand. Grow.</p>
+  </div>
+
+  <nav class="side-nav">
+    <a href="/" class="<%= currentPath === '/' ? 'active' : '' %>"><span>Home</span></a>
+    <a href="/dashboard" class="<%= currentPath === '/dashboard' ? 'active' : '' %>"><span>Dashboard</span></a>
+    <% const inTests = currentPath.startsWith('/assessments'); %>
+    <details class="tests-menu" <%= inTests ? 'open' : '' %>>
+      <summary class="tests-menu-toggle">Tests</summary>
+      <div class="tests-submenu">
+        <a href="/assessments/stress" class="<%= currentPath === '/assessments/stress' ? 'active' : '' %>">Stress Analysis Test</a>
+        <a href="/assessments/mental-health" class="<%= currentPath === '/assessments/mental-health' ? 'active' : '' %>">Mental Health Analysis Test</a>
+      </div>
+    </details>
+    <details class="tests-menu" <%= currentPath.startsWith('/sample-tests') || currentPath === '/questionnaire' || currentPath.startsWith('/result/') ? 'open' : '' %>>
+      <summary class="tests-menu-toggle">Sample Tests</summary>
+      <div class="tests-submenu">
+        <a href="/questionnaire" class="<%= currentPath === '/questionnaire' || currentPath.startsWith('/result/') ? 'active' : '' %>">Personality Test</a>
+        <a href="/sample-tests/basic-psychological" class="<%= currentPath === '/sample-tests/basic-psychological' ? 'active' : '' %>">Basic Psychological Test</a>
+        <a href="/sample-tests/leadership-teamwork" class="<%= currentPath === '/sample-tests/leadership-teamwork' ? 'active' : '' %>">Leadership, Stress &amp; Teamwork Test</a>
+      </div>
+    </details>
+    <a href="/music" class="<%= currentPath === '/music' ? 'active' : '' %>"><span>Music & Mood</span></a>
+    <a href="/about" class="<%= currentPath === '/about' ? 'active' : '' %>"><span>About</span></a>
+    <a href="/contact" class="<%= currentPath === '/contact' ? 'active' : '' %>"><span>Contact</span></a>
+  </nav>
+
+  <div class="side-menu-bottom">
+    <% if (currentUser) { %>
+      <div class="side-user-card">
+        <strong><%= currentUser.name %></strong>
+        <span>@<%= currentUser.username %></span>
+      </div>
+      <form action="/logout" method="POST" class="logout-form"><input type="hidden" name="_csrf" value="<%= csrf %>"><button type="submit">Logout</button></form>
+    <% } else { %>
+      <div class="side-user-card">
+        <strong>Guest User</strong>
+        <span>Login to save progress</span>
+      </div>
+      <div class="side-auth-actions">
+        <a href="/login" class="side-secondary-link">Login</a>
+        <a href="/register" class="side-primary-link">Create Account</a>
+      </div>
+    <% } %>
+  </div>
+</aside>
+<div class="side-overlay" id="sideOverlay"></div>

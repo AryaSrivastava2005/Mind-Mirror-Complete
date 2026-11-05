@@ -1,0 +1,383 @@
+{
+  "users": [
+    {
+      "id": "user_4b1459eb-408d-4450-81a6-204049300f73",
+      "name": "Arya Srivastava",
+      "username": "aryasrivastava",
+      "email": "aryasrivastava0509@gmail.com",
+      "password": "$2a$12$2wO4HHZyHRE28Jg851Rx.uDA3arY6WUoVVgwfQCHMCd0Aa/vYkmXG",
+      "createdAt": "2026-10-01T04:53:16.951Z"
+    }
+  ],
+  "results": [
+    {
+      "id": "result_73df256f-dd3a-4b0f-b1b2-c6e3b48a836d",
+      "userId": "user_4b1459eb-408d-4450-81a6-204049300f73",
+      "answers": {
+        "q1": "3",
+        "q2": "4",
+        "q3": "4",
+        "q4": "4",
+        "q5": "5",
+        "q6": "4",
+        "q7": "3",
+        "q8": "3",
+        "q9": "3",
+        "q10": "4",
+        "q11": "5",
+        "q12": "4",
+        "q13": "4",
+        "q14": "3",
+        "q15": "3"
+      },
+      "totalScore": 56,
+      "maxScore": 75,
+      "categoryScores": {
+        "thinking": 11,
+        "communication": 13,
+        "leadership": 9,
+        "creativity": 13,
+        "adaptability": 10
+      },
+      "categoryDetails": {
+        "thinking": {
+          "label": "Analytical thinking",
+          "shortLabel": "Thinking",
+          "description": "Problem solving, planning, and logical thinking"
+        },
+        "communication": {
+          "label": "Communication",
+          "shortLabel": "Communication",
+          "description": "Speaking, teamwork, and expression"
+        },
+        "leadership": {
+          "label": "Leadership",
+          "shortLabel": "Leadership",
+          "description": "Responsibility, guidance, and decision-making"
+        },
+        "creativity": {
+          "label": "Creativity",
+          "shortLabel": "Creativity",
+          "description": "New ideas, imagination, and original thinking"
+        },
+        "adaptability": {
+          "label": "Adaptability",
+          "shortLabel": "Adaptability",
+          "description": "Flexibility, learning from feedback, and handling change"
+        }
+      },
+      "highestCategory": "communication",
+      "topCategories": [
+        "communication",
+        "creativity"
+      ],
+      "scoringVersion": 2,
+      "resultTitle": "Shared highest areas",
+      "resultDescription": "Your responses gave equal scores to: Communication, Creativity.",
+      "level": "High agreement",
+      "createdAt": "2026-10-01T04:55:10.968Z"
+    },
+    {
+      "id": "result_ca92b495-e087-4808-a101-8b34c40d50b6",
+      "userId": "user_4b1459eb-408d-4450-81a6-204049300f73",
+      "answers": {
+        "q1": "5",
+        "q2": "4",
+        "q3": "4",
+        "q4": "3",
+        "q5": "4",
+        "q6": "4",
+        "q7": "1",
+        "q8": "5",
+        "q9": "5",
+        "q10": "5",
+        "q11": "4",
+        "q12": "4",
+        "q13": "4",
+        "q14": "4",
+        "q15": "4"
+      },
+      "totalScore": 60,
+      "maxScore": 75,
+      "categoryScores": {
+        "thinking": 13,
+        "communication": 11,
+        "leadership": 11,
+        "creativity": 13,
+        "adaptability": 12
+      },
+      "categoryDetails": {
+        "thinking": {
+          "label": "Analytical thinking",
+          "shortLabel": "Thinking",
+          "description": "Problem solving, planning, and logical thinking"
+        },
+        "communication": {
+          "label": "Communication",
+          "shortLabel": "Communication",
+          "description": "Speaking, teamwork, and expression"
+        },
+        "leadership": {
+          "label": "Leadership",
+          "shortLabel": "Leadership",
+          "description": "Responsibility, guidance, and decision-making"
+        },
+        "creativity": {
+          "label": "Creativity",
+          "shortLabel": "Creativity",
+          "description": "New ideas, imagination, and original thinking"
+        },
+        "adaptability": {
+          "label": "Adaptability",
+          "shortLabel": "Adaptability",
+          "description": "Flexibility, learning from feedback, and handling change"
+        }
+      },
+      "highestCategory": "thinking",
+      "topCategories": [
+        "thinking",
+        "creativity"
+      ],
+      "scoringVersion": 2,
+      "resultTitle": "Shared highest areas",
+      "resultDescription": "Your responses gave equal scores to: Analytical thinking, Creativity.",
+      "level": "Very high agreement",
+      "createdAt": "2026-10-01T06:09:14.753Z"
+    }
+  ],
+  "assessmentResults": [
+    {
+      "assessmentId": "stress",
+      "title": "Stress Analysis",
+      "version": "1.1",
+      "timeframe": "Current daily experience",
+      "sections": [
+        {
+          "title": "Demands and time pressure",
+          "answered": 10,
+          "skipped": 0,
+          "counts": [
+            1,
+            3,
+            2,
+            3,
+            1
+          ],
+          "frequent": [
+            {
+              "text": "How often do unfinished tasks stay on your mind during breaks?",
+              "answer": "Often"
+            },
+            {
+              "text": "When a task takes longer than expected, how often does your tension rise?",
+              "answer": "Often"
+            },
+            {
+              "text": "When you look at the next day’s commitments, how often do you feel unable to fit them in?",
+              "answer": "Almost always"
+            },
+            {
+              "text": "When interrupted during a task, how often do you find it difficult to get back on track?",
+              "answer": "Often"
+            }
+          ]
+        },
+        {
+          "title": "Worry and uncertainty",
+          "answered": 10,
+          "skipped": 0,
+          "counts": [
+            1,
+            3,
+            3,
+            3,
+            0
+          ],
+          "frequent": [
+            {
+              "text": "While waiting for an important reply, how often does worry interrupt what you are doing?",
+              "answer": "Often"
+            },
+            {
+              "text": "When plans change unexpectedly, how often do you feel unsettled for a long time?",
+              "answer": "Often"
+            },
+            {
+              "text": "When you cannot control an outcome, how often do you find it difficult to let the matter rest?",
+              "answer": "Often"
+            }
+          ]
+        },
+        {
+          "title": "Physical tension",
+          "answered": 10,
+          "skipped": 0,
+          "counts": [
+            1,
+            2,
+            3,
+            3,
+            1
+          ],
+          "frequent": [
+            {
+              "text": "How often do you notice tight shoulders or a clenched jaw during demanding moments?",
+              "answer": "Almost always"
+            },
+            {
+              "text": "How often does your body feel tense when you try to relax?",
+              "answer": "Often"
+            },
+            {
+              "text": "Before a deadline, how often do you notice yourself holding tension in your muscles?",
+              "answer": "Often"
+            },
+            {
+              "text": "When responsibilities pile up, how often does discomfort distract you from the task?",
+              "answer": "Often"
+            }
+          ]
+        },
+        {
+          "title": "Rest and recovery",
+          "answered": 10,
+          "skipped": 0,
+          "counts": [
+            0,
+            3,
+            4,
+            3,
+            0
+          ],
+          "frequent": [
+            {
+              "text": "How often do thoughts about responsibilities delay your sleep?",
+              "answer": "Often"
+            },
+            {
+              "text": "After a demanding task ends, how often do you immediately start another without a pause?",
+              "answer": "Often"
+            },
+            {
+              "text": "After an unexpected demand, how often do you find it hard to return to a relaxed state?",
+              "answer": "Often"
+            }
+          ]
+        },
+        {
+          "title": "Relationships and boundaries",
+          "answered": 10,
+          "skipped": 0,
+          "counts": [
+            0,
+            0,
+            2,
+            4,
+            4
+          ],
+          "frequent": [
+            {
+              "text": "How often do you agree to requests despite feeling overloaded?",
+              "answer": "Almost always"
+            },
+            {
+              "text": "How often do you feel unable to explain your limits to others?",
+              "answer": "Often"
+            },
+            {
+              "text": "How often do other people’s expectations add pressure to your day?",
+              "answer": "Almost always"
+            },
+            {
+              "text": "How often does pressure make you less patient with people?",
+              "answer": "Almost always"
+            },
+            {
+              "text": "How often do you keep concerns to yourself because asking for help feels difficult?",
+              "answer": "Often"
+            },
+            {
+              "text": "When you need uninterrupted time, how often do you struggle to ask for it?",
+              "answer": "Often"
+            },
+            {
+              "text": "During a disagreement, how often does existing pressure make it harder to listen?",
+              "answer": "Often"
+            },
+            {
+              "text": "When you need practical help, how often do you avoid asking because you fear being a burden?",
+              "answer": "Almost always"
+            }
+          ]
+        },
+        {
+          "title": "Managing pressure",
+          "answered": 10,
+          "skipped": 0,
+          "counts": [
+            0,
+            2,
+            3,
+            3,
+            2
+          ],
+          "frequent": [
+            {
+              "text": "How often do you find it hard to identify one manageable next step?",
+              "answer": "Often"
+            },
+            {
+              "text": "How often do you put off a task because the pressure feels too much?",
+              "answer": "Almost always"
+            },
+            {
+              "text": "How often do distractions take the place of dealing with a pressing issue?",
+              "answer": "Almost always"
+            },
+            {
+              "text": "How often do you feel stuck even after trying to organise your responsibilities?",
+              "answer": "Often"
+            },
+            {
+              "text": "When a task feels too large, how often do you struggle to break it into smaller parts?",
+              "answer": "Often"
+            }
+          ]
+        }
+      ],
+      "answered": 60,
+      "skipped": 0,
+      "createdAt": "2026-10-01T04:58:20.576Z",
+      "id": "assessment_2320b977-c1cd-479f-9ee0-7e77977f0a26",
+      "userId": "user_4b1459eb-408d-4450-81a6-204049300f73"
+    }
+  ],
+  "musicEntries": [
+    {
+      "id": "music_2d89c958-a230-43ff-825f-45945459c930",
+      "userId": "user_4b1459eb-408d-4450-81a6-204049300f73",
+      "song": "Tum Hi Ho",
+      "artist": "Mithoon & Arijit Singh",
+      "genre": "Bollywood",
+      "provider": "Apple iTunes Search",
+      "sourceUrl": "https://music.apple.com/in/album/tum-hi-ho/1073359412?i=1073359419&uo=4",
+      "retrievedAt": "2026-10-01T07:37:40.435Z",
+      "country": "IN",
+      "trackType": "unspecified",
+      "insights": {
+        "title": "Story, scene and connection",
+        "themes": "Film and regional categories can contain love songs, celebrations, grief, devotion and many other themes.",
+        "reasons": "You may connect with a scene, language, relationship or memory more than the genre itself.",
+        "prompt": "Which lyric, scene or memory makes this track meaningful to you?",
+        "type": "unspecified",
+        "typeLabel": "Not specified",
+        "typeTitle": "Track type not specified",
+        "typeReflection": "The catalog genre alone does not tell us the emotional tone of this particular recording. Choose a track type if one fits.",
+        "tip": "Notice how you feel before and after listening. If this track is not giving you the experience you want, try a different track or take a quiet break. Your own description matters more than a genre label."
+      },
+      "reflection": "This broad category includes many different emotions. Consider whether this song feels comforting, exciting, reflective or something else to you; the genre alone does not distinguish these.",
+      "reportedMood": "Sad",
+      "createdAt": "2026-10-01T07:39:01.767Z"
+    }
+  ]
+}

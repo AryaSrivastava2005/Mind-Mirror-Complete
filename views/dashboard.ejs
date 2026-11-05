@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="<%= csrf %>">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/darkmode.js" defer></script>
+  <script src="/js/chatbot.js" defer></script>
+  <script src="/js/sidebar.js" defer></script>
+</head>
+<body class="dashboard-body with-sidebar">
+  <%- include('partials/sidebar') %>
+  <div class="main-with-sidebar">
+    <nav class="navbar glass-navbar utility-navbar">
+      <button type="button" id="menuToggle" aria-expanded="false" aria-controls="sideMenu" class="menu-toggle" aria-label="Open menu">☰</button>
+      <div class="brand"><a href="/">Mind Mirror</a></div>
+      <div class="nav-links">
+        <button type="button" id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
+        <blockquote class="nav-motivation">
+          <p>“<%= motivation.text %>”</p>
+          <footer>— <%= motivation.author %></footer>
+        </blockquote>
+        <form action="/logout" method="POST" class="logout-form"><input type="hidden" name="_csrf" value="<%= csrf %>"><button type="submit">Logout</button></form>
+      </div>
+    </nav>
+
+    <main class="container dashboard-page">
+      <div class="dashboard-hero-card">
+        <div>
+          <p class="result-label">Your Personal Dashboard</p>
+          <h1>Hello, <%= currentUser.name %></h1>
+          <p>This is your profile dashboard. All your completed test results are saved below.</p>
+          <div class="result-badges">
+            <span class="badge badge-blue">Username: <%= currentUser.username %></span>
+            <span class="badge badge-purple">Saved results: <%= history.length %></span>
+            <span class="badge badge-green">Dark mode ready</span>
+          </div>
+        </div>
+        <a class="button dashboard-main-button" href="/questionnaire">Take Personality Test</a>
+      </div>
+
+      <% if (message) { %>
+        <div class="message"><%= message %></div>
+      <% } %>
+
+      <div class="section-title-row dashboard-title-row">
+        <div>
+          <p class="mini-label">Result history</p>
+          <h2>Previous Results</h2>
+<a class="button" href="/assessments">Mental Health & Stress assessments</a>
+<a class="small-button" href="/music">Music & Mood check-in</a>
+        </div>
+      </div>
+
+      <% if (!history.length) { %><div class="empty-box dashboard-empty-box"><h3>No results yet</h3><p>Complete any test to see its result here.</p><a class="button" href="/sample-tests">Choose a Sample Test</a></div><% } else { %>
+      <div class="dashboard-result-list">
+      <% history.forEach(item => { %><article class="dashboard-result-card"><div class="history-card-top"><span class="history-date"><%= new Date(item.createdAt).toLocaleString() %></span><span class="history-level">Saved result</span></div><h3><%= item.title %></h3><p class="history-description"><%= item.description %></p><a class="small-button" href="<%= item.url %>">View Full Result</a></article><% }) %>
+      </div><% } %>
+    </main>
+  </div>
+  <%- include('partials/chatbot') %>
+</body>
+</html>

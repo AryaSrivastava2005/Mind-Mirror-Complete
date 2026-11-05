@@ -1,0 +1,9 @@
+<fieldset class="question-card-smooth test-question">
+  <legend class="test-question-legend">Question <%= number %> of <%= total %>: <%= q.text %></legend>
+  <div class="question-number-pill" aria-hidden="true">Question <%= number %> of <%= total %></div>
+  <% if (q.kind) { %><span class="test-item-kind"><%= q.kind %></span><% } %>
+  <h3 aria-hidden="true"><%= q.text %></h3>
+  <div class="smooth-options test-answer-options" style="--answer-count:<%= choices.length %>">
+    <% choices.forEach(([value,label]) => { %><label class="smooth-option"><input type="radio" name="<%= q.id %>" value="<%= value %>" <%= answers[q.id] === String(value) ? 'checked' : '' %> required><span class="custom-radio" aria-hidden="true"></span><span class="option-text"><%= label %></span></label><% }) %>
+  </div>
+</fieldset>

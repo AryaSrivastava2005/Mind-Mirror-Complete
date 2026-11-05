@@ -1,0 +1,676 @@
+{
+  "stress": {
+    "id": "stress",
+    "title": "Stress Analysis",
+    "version": "1.1",
+    "sections": [
+      {
+        "title": "Demands and time pressure",
+        "questions": [
+          {
+            "id": "stress-1",
+            "kind": "Question",
+            "text": "How often do your responsibilities feel greater than the time available?"
+          },
+          {
+            "id": "stress-2",
+            "kind": "Question",
+            "text": "How often do you feel rushed while completing everyday tasks?"
+          },
+          {
+            "id": "stress-3",
+            "kind": "Question",
+            "text": "How often do you struggle to decide which task should come first?"
+          },
+          {
+            "id": "stress-4",
+            "kind": "Question",
+            "text": "How often do unfinished tasks stay on your mind during breaks?"
+          },
+          {
+            "id": "stress-5",
+            "kind": "Question",
+            "text": "How often do you feel pressure to complete tasks without enough resources?"
+          },
+          {
+            "id": "stress-6",
+            "kind": "Situation",
+            "text": "When several tasks are due together, how often do you feel overwhelmed?"
+          },
+          {
+            "id": "stress-7",
+            "kind": "Situation",
+            "text": "When someone adds a last-minute request, how often do you struggle to manage it?"
+          },
+          {
+            "id": "stress-8",
+            "kind": "Situation",
+            "text": "When a task takes longer than expected, how often does your tension rise?"
+          },
+          {
+            "id": "stress-9",
+            "kind": "Situation",
+            "text": "When you look at the next day’s commitments, how often do you feel unable to fit them in?"
+          },
+          {
+            "id": "stress-10",
+            "kind": "Situation",
+            "text": "When interrupted during a task, how often do you find it difficult to get back on track?"
+          }
+        ]
+      },
+      {
+        "title": "Worry and uncertainty",
+        "questions": [
+          {
+            "id": "stress-11",
+            "kind": "Question",
+            "text": "How often do you keep thinking about things that might go wrong?"
+          },
+          {
+            "id": "stress-12",
+            "kind": "Question",
+            "text": "How often do you find it difficult to stop worrying about responsibilities?"
+          },
+          {
+            "id": "stress-13",
+            "kind": "Question",
+            "text": "How often does uncertainty make it difficult to make a decision?"
+          },
+          {
+            "id": "stress-14",
+            "kind": "Question",
+            "text": "How often do you feel a need to check plans repeatedly?"
+          },
+          {
+            "id": "stress-15",
+            "kind": "Question",
+            "text": "How often do you expect a setback even when there is no clear sign of one?"
+          },
+          {
+            "id": "stress-16",
+            "kind": "Situation",
+            "text": "While waiting for an important reply, how often does worry interrupt what you are doing?"
+          },
+          {
+            "id": "stress-17",
+            "kind": "Situation",
+            "text": "When plans change unexpectedly, how often do you feel unsettled for a long time?"
+          },
+          {
+            "id": "stress-18",
+            "kind": "Situation",
+            "text": "After making a small mistake, how often do you keep replaying it?"
+          },
+          {
+            "id": "stress-19",
+            "kind": "Situation",
+            "text": "Before an unfamiliar task, how often does worry make it hard to begin?"
+          },
+          {
+            "id": "stress-20",
+            "kind": "Situation",
+            "text": "When you cannot control an outcome, how often do you find it difficult to let the matter rest?"
+          }
+        ]
+      },
+      {
+        "title": "Physical tension",
+        "questions": [
+          {
+            "id": "stress-21",
+            "kind": "Question",
+            "text": "How often do you notice tight shoulders or a clenched jaw during demanding moments?"
+          },
+          {
+            "id": "stress-22",
+            "kind": "Question",
+            "text": "How often does your body feel tense when you try to relax?"
+          },
+          {
+            "id": "stress-23",
+            "kind": "Question",
+            "text": "How often do you feel physically restless during periods of pressure?"
+          },
+          {
+            "id": "stress-24",
+            "kind": "Question",
+            "text": "How often do you notice stomach discomfort alongside feeling under pressure?"
+          },
+          {
+            "id": "stress-25",
+            "kind": "Question",
+            "text": "How often do you feel physically drained after a demanding day?"
+          },
+          {
+            "id": "stress-26",
+            "kind": "Situation",
+            "text": "During a difficult conversation, how often do you notice your body becoming tense?"
+          },
+          {
+            "id": "stress-27",
+            "kind": "Situation",
+            "text": "Before a deadline, how often do you notice yourself holding tension in your muscles?"
+          },
+          {
+            "id": "stress-28",
+            "kind": "Situation",
+            "text": "When a message brings another demand, how often do you feel physically on edge?"
+          },
+          {
+            "id": "stress-29",
+            "kind": "Situation",
+            "text": "While taking a break after a busy period, how often does your body remain tense?"
+          },
+          {
+            "id": "stress-30",
+            "kind": "Situation",
+            "text": "When responsibilities pile up, how often does discomfort distract you from the task?"
+          }
+        ]
+      },
+      {
+        "title": "Rest and recovery",
+        "questions": [
+          {
+            "id": "stress-31",
+            "kind": "Question",
+            "text": "How often do thoughts about responsibilities delay your sleep?"
+          },
+          {
+            "id": "stress-32",
+            "kind": "Question",
+            "text": "How often do you wake feeling that you are not fully recovered from the previous day?"
+          },
+          {
+            "id": "stress-33",
+            "kind": "Question",
+            "text": "How often do you miss a break you need?"
+          },
+          {
+            "id": "stress-34",
+            "kind": "Question",
+            "text": "How often do you struggle to mentally switch off after finishing responsibilities?"
+          },
+          {
+            "id": "stress-35",
+            "kind": "Question",
+            "text": "How often do you give up enjoyable activities because you feel too pressured?"
+          },
+          {
+            "id": "stress-36",
+            "kind": "Situation",
+            "text": "At bedtime, how often does planning the next day keep you awake?"
+          },
+          {
+            "id": "stress-37",
+            "kind": "Situation",
+            "text": "During free time, how often do you feel guilty for resting?"
+          },
+          {
+            "id": "stress-38",
+            "kind": "Situation",
+            "text": "After a demanding task ends, how often do you immediately start another without a pause?"
+          },
+          {
+            "id": "stress-39",
+            "kind": "Situation",
+            "text": "When you have time off, how often do you keep checking work or study messages?"
+          },
+          {
+            "id": "stress-40",
+            "kind": "Situation",
+            "text": "After an unexpected demand, how often do you find it hard to return to a relaxed state?"
+          }
+        ]
+      },
+      {
+        "title": "Relationships and boundaries",
+        "questions": [
+          {
+            "id": "stress-41",
+            "kind": "Question",
+            "text": "How often do you agree to requests despite feeling overloaded?"
+          },
+          {
+            "id": "stress-42",
+            "kind": "Question",
+            "text": "How often do you feel unable to explain your limits to others?"
+          },
+          {
+            "id": "stress-43",
+            "kind": "Question",
+            "text": "How often do other people’s expectations add pressure to your day?"
+          },
+          {
+            "id": "stress-44",
+            "kind": "Question",
+            "text": "How often does pressure make you less patient with people?"
+          },
+          {
+            "id": "stress-45",
+            "kind": "Question",
+            "text": "How often do you keep concerns to yourself because asking for help feels difficult?"
+          },
+          {
+            "id": "stress-46",
+            "kind": "Situation",
+            "text": "When someone asks for another favour, how often do you say yes despite needing rest?"
+          },
+          {
+            "id": "stress-47",
+            "kind": "Situation",
+            "text": "When you need uninterrupted time, how often do you struggle to ask for it?"
+          },
+          {
+            "id": "stress-48",
+            "kind": "Situation",
+            "text": "During a disagreement, how often does existing pressure make it harder to listen?"
+          },
+          {
+            "id": "stress-49",
+            "kind": "Situation",
+            "text": "When a person is disappointed with you, how often do you take on more than you can manage?"
+          },
+          {
+            "id": "stress-50",
+            "kind": "Situation",
+            "text": "When you need practical help, how often do you avoid asking because you fear being a burden?"
+          }
+        ]
+      },
+      {
+        "title": "Managing pressure",
+        "questions": [
+          {
+            "id": "stress-51",
+            "kind": "Question",
+            "text": "How often do you find it hard to identify one manageable next step?"
+          },
+          {
+            "id": "stress-52",
+            "kind": "Question",
+            "text": "How often do you put off a task because the pressure feels too much?"
+          },
+          {
+            "id": "stress-53",
+            "kind": "Question",
+            "text": "How often do distractions take the place of dealing with a pressing issue?"
+          },
+          {
+            "id": "stress-54",
+            "kind": "Question",
+            "text": "How often do you struggle to find a coping approach that helps?"
+          },
+          {
+            "id": "stress-55",
+            "kind": "Question",
+            "text": "How often do you feel stuck even after trying to organise your responsibilities?"
+          },
+          {
+            "id": "stress-56",
+            "kind": "Situation",
+            "text": "When a task feels too large, how often do you struggle to break it into smaller parts?"
+          },
+          {
+            "id": "stress-57",
+            "kind": "Situation",
+            "text": "When you feel overloaded, how often do you continue without reassessing priorities?"
+          },
+          {
+            "id": "stress-58",
+            "kind": "Situation",
+            "text": "After a stressful event, how often do you find it difficult to ask for support?"
+          },
+          {
+            "id": "stress-59",
+            "kind": "Situation",
+            "text": "When your usual way of coping does not help, how often do you feel unsure what to try next?"
+          },
+          {
+            "id": "stress-60",
+            "kind": "Situation",
+            "text": "When a manageable problem arises, how often does pressure make it seem impossible to address?"
+          }
+        ]
+      }
+    ]
+  },
+  "mental-health": {
+    "id": "mental-health",
+    "title": "Mental Health Analysis",
+    "version": "1.1",
+    "sections": [
+      {
+        "title": "Mood and enjoyment",
+        "questions": [
+          {
+            "id": "mental-health-1",
+            "kind": "Question",
+            "text": "How often do you feel down or emotionally heavy?"
+          },
+          {
+            "id": "mental-health-2",
+            "kind": "Question",
+            "text": "How often do things you usually enjoy feel less appealing?"
+          },
+          {
+            "id": "mental-health-3",
+            "kind": "Question",
+            "text": "How often do you find it difficult to feel interested in your day?"
+          },
+          {
+            "id": "mental-health-4",
+            "kind": "Question",
+            "text": "How often do you feel emotionally numb or disconnected from your feelings?"
+          },
+          {
+            "id": "mental-health-5",
+            "kind": "Question",
+            "text": "How often does irritability affect your day?"
+          },
+          {
+            "id": "mental-health-6",
+            "kind": "Situation",
+            "text": "When you have a chance to do a favourite activity, how often do you struggle to engage with it?"
+          },
+          {
+            "id": "mental-health-7",
+            "kind": "Situation",
+            "text": "When something pleasant happens, how often does it feel difficult to enjoy the moment?"
+          },
+          {
+            "id": "mental-health-8",
+            "kind": "Situation",
+            "text": "During an ordinary day, how often does a low mood make small tasks feel harder?"
+          },
+          {
+            "id": "mental-health-9",
+            "kind": "Situation",
+            "text": "When spending time with someone you like, how often do you still feel emotionally distant?"
+          },
+          {
+            "id": "mental-health-10",
+            "kind": "Situation",
+            "text": "After a disappointment, how often does your mood remain low longer than you expect?"
+          }
+        ]
+      },
+      {
+        "title": "Worry and feeling on edge",
+        "questions": [
+          {
+            "id": "mental-health-11",
+            "kind": "Question",
+            "text": "How often do you feel on edge without being able to settle?"
+          },
+          {
+            "id": "mental-health-12",
+            "kind": "Question",
+            "text": "How often do worries interrupt your attention?"
+          },
+          {
+            "id": "mental-health-13",
+            "kind": "Question",
+            "text": "How often do you struggle to tolerate uncertainty?"
+          },
+          {
+            "id": "mental-health-14",
+            "kind": "Question",
+            "text": "How often do you avoid an ordinary activity because of worry?"
+          },
+          {
+            "id": "mental-health-15",
+            "kind": "Question",
+            "text": "How often do you need repeated reassurance before feeling able to continue?"
+          },
+          {
+            "id": "mental-health-16",
+            "kind": "Situation",
+            "text": "Before an everyday appointment, how often does worry interfere with preparation?"
+          },
+          {
+            "id": "mental-health-17",
+            "kind": "Situation",
+            "text": "When a message is unclear, how often do you assume something negative?"
+          },
+          {
+            "id": "mental-health-18",
+            "kind": "Situation",
+            "text": "When entering an unfamiliar place, how often does uneasiness make you want to leave?"
+          },
+          {
+            "id": "mental-health-19",
+            "kind": "Situation",
+            "text": "After a conversation, how often do you worry repeatedly about what you say?"
+          },
+          {
+            "id": "mental-health-20",
+            "kind": "Situation",
+            "text": "When an ordinary plan changes, how often does uneasiness disrupt the rest of your day?"
+          }
+        ]
+      },
+      {
+        "title": "Sleep and energy",
+        "questions": [
+          {
+            "id": "mental-health-21",
+            "kind": "Question",
+            "text": "How often do you have trouble settling into sleep?"
+          },
+          {
+            "id": "mental-health-22",
+            "kind": "Question",
+            "text": "How often does waking during the night leave you struggling to return to sleep?"
+          },
+          {
+            "id": "mental-health-23",
+            "kind": "Question",
+            "text": "How often do you feel too low in energy for usual activities?"
+          },
+          {
+            "id": "mental-health-24",
+            "kind": "Question",
+            "text": "How often does your sleep routine differ from what feels helpful to you?"
+          },
+          {
+            "id": "mental-health-25",
+            "kind": "Question",
+            "text": "How often does tiredness make it hard to concentrate?"
+          },
+          {
+            "id": "mental-health-26",
+            "kind": "Situation",
+            "text": "When it is time to get up, how often does tiredness make starting the day difficult?"
+          },
+          {
+            "id": "mental-health-27",
+            "kind": "Situation",
+            "text": "During a routine task, how often does low energy make you stop earlier than intended?"
+          },
+          {
+            "id": "mental-health-28",
+            "kind": "Situation",
+            "text": "When you have enough opportunity to rest, how often do you still feel unrefreshed?"
+          },
+          {
+            "id": "mental-health-29",
+            "kind": "Situation",
+            "text": "After a disrupted night, how often does it become difficult to manage your usual commitments?"
+          },
+          {
+            "id": "mental-health-30",
+            "kind": "Situation",
+            "text": "When you try to maintain a regular bedtime, how often do you find it hard to follow through?"
+          }
+        ]
+      },
+      {
+        "title": "Connection and belonging",
+        "questions": [
+          {
+            "id": "mental-health-31",
+            "kind": "Question",
+            "text": "How often do you feel lonely even when people are available?"
+          },
+          {
+            "id": "mental-health-32",
+            "kind": "Question",
+            "text": "How often do you feel that you have no one you can talk openly with?"
+          },
+          {
+            "id": "mental-health-33",
+            "kind": "Question",
+            "text": "How often do you withdraw from contact you normally value?"
+          },
+          {
+            "id": "mental-health-34",
+            "kind": "Question",
+            "text": "How often do you feel misunderstood by people important to you?"
+          },
+          {
+            "id": "mental-health-35",
+            "kind": "Question",
+            "text": "How often do you feel disconnected from groups you belong to?"
+          },
+          {
+            "id": "mental-health-36",
+            "kind": "Situation",
+            "text": "When a friend reaches out, how often do you find it difficult to respond despite wanting connection?"
+          },
+          {
+            "id": "mental-health-37",
+            "kind": "Situation",
+            "text": "In a group conversation, how often do you feel unable to take part?"
+          },
+          {
+            "id": "mental-health-38",
+            "kind": "Situation",
+            "text": "When you want company, how often do you struggle to reach out?"
+          },
+          {
+            "id": "mental-health-39",
+            "kind": "Situation",
+            "text": "After a social interaction, how often do you feel more isolated than before?"
+          },
+          {
+            "id": "mental-health-40",
+            "kind": "Situation",
+            "text": "When you have a concern to share, how often do you hold back because you expect not to be understood?"
+          }
+        ]
+      },
+      {
+        "title": "Self-view and emotional coping",
+        "questions": [
+          {
+            "id": "mental-health-41",
+            "kind": "Question",
+            "text": "How often do you speak to yourself more harshly than you speak to a friend?"
+          },
+          {
+            "id": "mental-health-42",
+            "kind": "Question",
+            "text": "How often do you dwell on perceived shortcomings?"
+          },
+          {
+            "id": "mental-health-43",
+            "kind": "Question",
+            "text": "How often do you find strong emotions difficult to manage?"
+          },
+          {
+            "id": "mental-health-44",
+            "kind": "Question",
+            "text": "How often do you struggle to identify what you are feeling?"
+          },
+          {
+            "id": "mental-health-45",
+            "kind": "Question",
+            "text": "How often do comparisons with others leave you feeling worse about yourself?"
+          },
+          {
+            "id": "mental-health-46",
+            "kind": "Situation",
+            "text": "After a minor mistake, how often do you judge your whole self negatively?"
+          },
+          {
+            "id": "mental-health-47",
+            "kind": "Situation",
+            "text": "When you receive constructive feedback, how often do you find it hard to separate it from your self-worth?"
+          },
+          {
+            "id": "mental-health-48",
+            "kind": "Situation",
+            "text": "When a strong feeling arises, how often do you react in a way that you later regret?"
+          },
+          {
+            "id": "mental-health-49",
+            "kind": "Situation",
+            "text": "When you need comfort, how often do you struggle to treat yourself kindly?"
+          },
+          {
+            "id": "mental-health-50",
+            "kind": "Situation",
+            "text": "After seeing someone else’s achievements, how often do you dismiss your own efforts?"
+          }
+        ]
+      },
+      {
+        "title": "Everyday functioning",
+        "questions": [
+          {
+            "id": "mental-health-51",
+            "kind": "Question",
+            "text": "How often do emotional difficulties interfere with basic daily routines?"
+          },
+          {
+            "id": "mental-health-52",
+            "kind": "Question",
+            "text": "How often do you struggle to begin necessary tasks?"
+          },
+          {
+            "id": "mental-health-53",
+            "kind": "Question",
+            "text": "How often does concentrating on reading or conversation feel difficult?"
+          },
+          {
+            "id": "mental-health-54",
+            "kind": "Question",
+            "text": "How often do ordinary decisions feel unusually hard?"
+          },
+          {
+            "id": "mental-health-55",
+            "kind": "Question",
+            "text": "How often do emotional difficulties interfere with regular meals or personal care?"
+          },
+          {
+            "id": "mental-health-56",
+            "kind": "Situation",
+            "text": "When a routine household task needs doing, how often does your emotional state make it difficult to start?"
+          },
+          {
+            "id": "mental-health-57",
+            "kind": "Situation",
+            "text": "When someone explains something, how often do you struggle to take it in because of how you feel?"
+          },
+          {
+            "id": "mental-health-58",
+            "kind": "Situation",
+            "text": "When choosing between simple options, how often do you feel unable to decide?"
+          },
+          {
+            "id": "mental-health-59",
+            "kind": "Situation",
+            "text": "When you need to attend work, study or another commitment, how often do emotional difficulties get in the way?"
+          },
+          {
+            "id": "mental-health-60",
+            "kind": "Situation",
+            "text": "When planning a basic routine for the day, how often do you need more support than usual to follow it?"
+          }
+        ]
+      }
+    ]
+  }
+}

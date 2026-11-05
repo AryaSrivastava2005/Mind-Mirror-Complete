@@ -1,0 +1,61 @@
+<%- include('partials/assessment-head',{title:report.title+' results'}) %>
+<section class="info-hero-card">
+  <p class="result-label">Understand your answers · choose a small next step</p>
+  <h1><%= report.title %>: your reflection</h1>
+  <p><%= report.timeframe %> · <%= report.answered %> answered · <%= report.skipped %> skipped</p>
+  <p><%= saved?'Saved to your account.':'Not saved to account history. Leaving this page may lose the result.' %></p>
+  <p>These charts describe your responses to an informal questionnaire. They are not a diagnosis, a severity score or a measure of your worth. The suggestions are general self-care ideas; choose what fits your circumstances.</p>
+  <% if(report.answered===0){ %><p><strong>All items were skipped. There is not enough information to summarise your experiences.</strong> You can still explore the general ideas below.</p><% } %>
+</section>
+<section class="card">
+  <h2>Your answers at a glance</h2>
+  <p>Each bar shows how many items you mark Often or Almost always in that area. Every area contains 10 items. Skipped items are not counted as “Never”; compare areas cautiously when completion differs.</p>
+  <div class="reflection-overview">
+  <% insights.forEach((s,i)=>{ %>
+    <div class="reflection-row">
+      <a href="#area-<%= i %>"><%= s.title %></a>
+      <div class="reflection-track" role="img" aria-label="<%= s.title %>: <%= s.frequentCount %> of <%= s.answered %> answered items marked Often or Almost always; <%= s.skipped %> skipped">
+        <span style="width:<%= s.frequentCount*10 %>%"></span>
+      </div>
+      <span><%= s.answered ? s.frequentCount+' / '+s.answered+' answered' : 'No answers' %></span>
+    </div>
+  <% }) %>
+  </div>
+  <p class="reflection-note">Bar scale: 0–10 items. Longer bars indicate more frequently reported experiences, not a clinical level of stress or illness.</p>
+</section>
+<% insights.forEach((s,i)=>{ %>
+<section class="card reflection-area" id="area-<%= i %>">
+  <h2><%= s.title %></h2>
+  <p><%= s.context %></p>
+  <p><strong>Your response pattern:</strong> <%= s.description %></p>
+  <% if(s.answered){ %>
+  <div class="reflection-detail-grid">
+    <figure class="reflection-chart">
+      <figcaption>How you answer in this area</figcaption>
+      <% ['Never','Rarely','Sometimes','Often','Almost always'].forEach((label,j)=>{ %>
+      <div class="frequency-row">
+        <span><%= label %></span>
+        <div class="reflection-track" aria-hidden="true"><span class="frequency-<%= j %>" style="width:<%= s.counts[j]*10 %>%"></span></div>
+        <strong><%= s.counts[j] %><span class="chart-sr-only"> items</span></strong>
+      </div>
+      <% }) %>
+      <p class="reflection-note">Number of items · scale 0–10 · <%= s.skipped %> skipped</p>
+    </figure>
+    <div class="reflection-tip">
+      <p class="result-label">A practical situation</p>
+      <h3><%= s.situation %></h3>
+      <ol><% s.tips.forEach(tip=>{ %><li><%= tip %></li><% }) %></ol>
+    </div>
+  </div>
+  <% }else{ %><div class="reflection-tip"><h3>General idea: <%= s.situation %></h3><p><%= s.tips[0] %></p></div><% } %>
+</section>
+<% }) %>
+<section class="card">
+  <h2><%= report.assessmentId==='stress'?'Make a small stress-relief plan':'Choose one step for your wellbeing' %></h2>
+  <p>Pick one suggestion that feels achievable. Decide when to try it, then notice whether it helps. You can change the plan if it does not suit you; improvement is not guaranteed by completing a task.</p>
+  <p>If difficulties persist, worsen or affect everyday functioning, speak with a qualified professional. You can ask for help regardless of the chart.</p>
+  <a class="button" href="/assessments">Back to assessments</a>
+  <% if(saved){ %><form action="/assessments/result/<%= report.id %>/delete" method="POST"><input type="hidden" name="_csrf" value="<%= csrf %>"><button type="submit">Delete this report</button></form><% } %>
+</section>
+<%- include('partials/support') %>
+</main></div></body></html>

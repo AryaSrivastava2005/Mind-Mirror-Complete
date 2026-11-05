@@ -1,0 +1,83 @@
+[
+  {
+    "title": "Leadership",
+    "description": "These statements explore initiative, decision-making, listening, leading by example and public speaking. They mix beliefs with reported behaviours, so agreement is not a measure of leadership ability.",
+    "tip": "Choose one small task to take responsibility for, clarify your role with the group and ask for feedback. Practise listening and summarising another person’s view before responding.",
+    "questions": [
+      {
+        "id": "l1",
+        "text": "I take responsibility even when a task is not assigned to me."
+      },
+      {
+        "id": "l2",
+        "text": "I can make tough decisions even if some people disagree with me."
+      },
+      {
+        "id": "l3",
+        "text": "I believe a good leader listens more than they speak."
+      },
+      {
+        "id": "l4",
+        "text": "I prefer to lead by example rather than by giving orders."
+      },
+      {
+        "id": "l5",
+        "text": "I am comfortable speaking in front of a large group."
+      }
+    ]
+  },
+  {
+    "title": "Stress & Problem Solving",
+    "description": "These statements explore how you describe handling pressure, deadlines, asking for help and responding to setbacks. The responses do not measure stress severity or mental health.",
+    "tip": "When deadlines overlap, list the next action for each task, clarify priorities and ask for specific help where needed. After a setback, identify one useful lesson without requiring yourself to recover immediately.",
+    "questions": [
+      {
+        "id": "l6",
+        "text": "I stay calm and think clearly under pressure."
+      },
+      {
+        "id": "l7",
+        "text": "I see problems as opportunities to learn, not as setbacks."
+      },
+      {
+        "id": "l8",
+        "text": "I can manage multiple deadlines without panicking."
+      },
+      {
+        "id": "l9",
+        "text": "I ask for help when I feel overwhelmed instead of hiding it."
+      },
+      {
+        "id": "l10",
+        "text": "I bounce back quickly after failure or criticism."
+      }
+    ]
+  },
+  {
+    "title": "Teamwork & Relationships",
+    "description": "These statements explore cooperation, shared credit, conflict, inclusion and trust. Agreement describes your perspective; it does not establish how others experience working with you.",
+    "tip": "In your next group task, invite a quieter person’s view, acknowledge specific contributions and restate the shared goal when opinions differ.",
+    "questions": [
+      {
+        "id": "l11",
+        "text": "I find it easy to work with people who have different opinions than me."
+      },
+      {
+        "id": "l12",
+        "text": "I give credit to the team instead of taking it all myself."
+      },
+      {
+        "id": "l13",
+        "text": "I can handle conflict and try to find a solution, not take sides."
+      },
+      {
+        "id": "l14",
+        "text": "I make sure everyone in a group feels included and heard."
+      },
+      {
+        "id": "l15",
+        "text": "I believe trust is more important than being the smartest person in the room."
+      }
+    ]
+  }
+]

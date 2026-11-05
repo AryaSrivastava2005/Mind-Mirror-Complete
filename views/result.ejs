@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="<%= csrf %>">
+  <title>Your Result</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/darkmode.js" defer></script>
+  <script src="/js/chatbot.js" defer></script>
+  <script src="/js/sidebar.js" defer></script>
+</head>
+<body class="result-body with-sidebar">
+  <%- include('partials/sidebar') %>
+  <div class="main-with-sidebar">
+    <nav class="navbar glass-navbar utility-navbar">
+      <button type="button" id="menuToggle" aria-expanded="false" aria-controls="sideMenu" class="menu-toggle" aria-label="Open menu">☰</button>
+      <div class="brand"><a href="/">Mind Mirror</a></div>
+      <div class="nav-links">
+        <button type="button" id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/questionnaire">Take Again</a>
+        <form action="/logout" method="POST" class="logout-form"><input type="hidden" name="_csrf" value="<%= csrf %>"><button type="submit">Logout</button></form>
+      </div>
+    </nav>
+
+    <main class="container result-page">
+      <%
+        const scores = result.categoryScores;
+        const details = result.categoryDetails || categoryDetails;
+        const categoryNames = Object.keys(details);
+        const categoryMax = 15;
+        const totalPercent = Math.round((result.totalScore / result.maxScore) * 100);
+        const circumference = 314;
+        const progressOffset = circumference - (circumference * totalPercent) / 100;
+        const topCategoryLabel = (result.topCategories || [result.highestCategory]).map(key => details[key] ? details[key].label : key).join(", ");
+      %>
+
+      <section class="result-hero-card">
+        <div class="result-hero-left">
+          <p class="result-label">Your Profile Result</p>
+          <h1><%= result.resultTitle %></h1>
+          <p class="result-description"><%= result.resultDescription %></p>
+
+          <div class="result-badges">
+            <span class="badge badge-blue">Agreement: <%= result.level %></span>
+            <span class="badge badge-purple">Top area: <%= topCategoryLabel %></span>
+            <span class="badge badge-green">Saved to profile</span>
+          </div>
+        </div>
+
+        <div class="result-hero-right">
+          <div class="donut-card">
+            <svg class="donut-chart" viewBox="0 0 120 120">
+              <circle class="donut-bg" cx="60" cy="60" r="50"></circle>
+              <circle class="donut-progress" cx="60" cy="60" r="50" style="stroke-dashoffset: <%= progressOffset %>;"></circle>
+            </svg>
+            <div class="donut-text">
+              <strong><%= totalPercent %>%</strong>
+              <span><%= result.totalScore %>/<%= result.maxScore %></span>
+            </div>
+          </div>
+          <p class="donut-caption">Overall agreement</p>
+        </div>
+      </section>
+
+      <section class="chart-grid">
+        <div class="chart-card wide-card">
+          <div class="section-title-row">
+            <div>
+              <p class="mini-label">Chart 1</p>
+              <h2>Your Responses by Category</h2>
+            </div>
+            <span class="light-pill">Maximum: 15 each</span>
+          </div>
+
+          <div class="bar-chart">
+            <% categoryNames.forEach(function(category) { 
+              const score = scores[category] || 0;
+              const percent = Math.round((score / categoryMax) * 100);
+            %>
+              <div class="bar-row">
+                <div class="bar-name"><%= details[category].shortLabel %></div>
+                <div class="bar-track"><div class="bar-fill <%= category %>-bar" style="width: <%= percent %>%"></div></div>
+                <div class="bar-value"><%= score %>/15</div>
+              </div>
+            <% }) %>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <p class="mini-label">Chart 2</p>
+          <h2>Score Summary</h2>
+          <div class="summary-stat-list">
+            <div class="summary-stat stat-blue">
+              <span>Total score</span>
+              <strong><%= result.totalScore %></strong>
+            </div>
+            <div class="summary-stat stat-purple">
+              <span>Maximum score</span>
+              <strong><%= result.maxScore %></strong>
+            </div>
+            <div class="summary-stat stat-green">
+              <span>Overall percent</span>
+              <strong><%= totalPercent %>%</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="chart-card">
+        <div class="section-title-row">
+          <div>
+            <p class="mini-label">Chart 3</p>
+            <h2>Strength Cards</h2>
+          </div>
+          <span class="light-pill">Color-coded result areas</span>
+        </div>
+
+        <div class="strength-grid strength-grid-five">
+          <% categoryNames.forEach(function(category) { 
+            const score = scores[category] || 0;
+            const percent = Math.round((score / categoryMax) * 100);
+          %>
+            <div class="strength-card strength-<%= category %>">
+              <h3><%= details[category].shortLabel %></h3>
+              <p><%= percent %>%</p>
+              <span><%= score %>/15</span>
+            </div>
+          <% }) %>
+        </div>
+      </section>
+
+      <section class="suggestion-box">
+        <h2>What this result means</h2>
+        <p>Your highest self-reported area(s): <strong><%= topCategoryLabel %></strong>. These scores reflect your answers, not measured ability or mental health. This questionnaire has not been clinically validated. Your history lets you revisit past responses.</p>
+        <div class="action-row">
+          <a class="button" href="/dashboard">Back to Dashboard</a>
+          <a class="small-button" href="/questionnaire">Take Test Again</a>
+        </div>
+      </section>
+    </main>
+  </div>
+  <%- include('partials/chatbot') %>
+</body>
+</html>

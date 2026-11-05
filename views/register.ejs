@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="<%= csrf %>">
+  <title>Create Account</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/darkmode.js" defer></script>
+  <script src="/js/chatbot.js" defer></script>
+  <script src="/js/sidebar.js" defer></script>
+</head>
+<body class="with-sidebar">
+  <%- include('partials/sidebar') %>
+  <div class="main-with-sidebar">
+    <nav class="navbar glass-navbar utility-navbar">
+      <button type="button" id="menuToggle" aria-expanded="false" aria-controls="sideMenu" class="menu-toggle" aria-label="Open menu">☰</button>
+      <div class="brand"><a href="/">Mind Mirror</a></div>
+      <div class="nav-links">
+        <button type="button" id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
+        <a href="/login">Login</a>
+      </div>
+    </nav>
+
+    <main class="form-page">
+      <form class="auth-form" action="/register" method="POST">
+<input type="hidden" name="_csrf" value="<%= csrf %>">
+        <h1>Create Account</h1>
+        <p>Create your profile to save questionnaire results. Use at least 8 characters for your password.</p>
+
+        <% if (message) { %>
+          <div class="message"><%= message %></div>
+        <% } %>
+
+        <label>Name</label>
+        <input type="text" name="name" placeholder="Enter your full name" required>
+
+        <label>Username</label>
+        <input type="text" name="username" pattern="[A-Za-z0-9_]{3,30}" autocomplete="username" placeholder="Choose a username for login" required>
+        <p class="input-help">You will use this username when you login.</p>
+
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Enter your email" required>
+
+        <label>Password</label>
+        <input type="password" name="password" minlength="8" autocomplete="new-password" placeholder="Create a password" required>
+
+        <button type="submit">Register</button>
+        <p class="small-text">Already have an account? <a href="/login">Login here</a></p>
+      </form>
+    </main>
+  </div>
+  <%- include('partials/chatbot') %>
+</body>
+</html>

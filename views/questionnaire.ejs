@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="<%= csrf %>">
+  <title>Personality Test</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/darkmode.js" defer></script>
+  <script src="/js/chatbot.js" defer></script>
+  <script src="/js/sidebar.js" defer></script>
+<script src="/js/questionnaire.js" defer></script>
+</head>
+<body class="questionnaire-body with-sidebar">
+  <%- include('partials/sidebar') %>
+  <div class="main-with-sidebar">
+    <nav class="navbar glass-navbar utility-navbar">
+      <button type="button" id="menuToggle" aria-expanded="false" aria-controls="sideMenu" class="menu-toggle" aria-label="Open menu">☰</button>
+      <div class="brand"><a href="/">Mind Mirror</a></div>
+      <div class="nav-links">
+        <button type="button" id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
+        <a href="/dashboard">Dashboard</a>
+        <form action="/logout" method="POST" class="logout-form"><input type="hidden" name="_csrf" value="<%= csrf %>"><button type="submit">Logout</button></form>
+      </div>
+    </nav>
+
+    <main class="container questionnaire-page">
+      <section class="questionnaire-hero">
+        <p class="result-label">Your personality self-reflection</p>
+        <h1>Personality Test</h1>
+        <p>Choose one answer for each question. This informal personality reflection summarises self-reported strengths; it is not a validated personality assessment. Your result will be saved in your profile.</p>
+        <div class="question-progress-wrap">
+          <div class="question-progress-track">
+            <div class="question-progress-fill"></div>
+          </div>
+          <span id="questionProgress" aria-live="polite">0 / <%= questions.length %> answered</span>
+        </div>
+      </section>
+
+      <% if (message) { %><div class="message" role="alert"><%= message %></div><% } %>
+      <form class="question-form smooth-question-form" action="/questionnaire" method="POST">
+<input type="hidden" name="_csrf" value="<%= csrf %>">
+        <% questions.forEach(function(question, index) { %>
+          <%- include('partials/test-question', {q:question,number:index+1,total:questions.length,choices:answerOptions.map(o=>[o.value,o.label]),answers}) %>
+        <% }) %>
+
+        <div class="submit-card-smooth">
+          <h2>Ready to see your result?</h2>
+          <p>After submitting, your score, profile type, and category chart will be saved to your dashboard.</p>
+          <button type="submit">Submit and See Result</button>
+        </div>
+      </form>
+    </main>
+  </div>
+  <%- include('partials/chatbot') %>
+</body>
+</html>
